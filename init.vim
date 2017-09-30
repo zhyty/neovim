@@ -25,6 +25,8 @@ Plug 'lervag/vimtex'
 Plug 'tmhedberg/SimpylFold'
 " Tender Theme
 Plug 'jacoborus/tender.vim'
+" Vim Jedi
+Plug 'davidhalter/jedi-vim'
 " deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -187,6 +189,10 @@ let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/ocp-indent/vim/indent"
 " merlin
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
+" DEOPLETE ////////////////////////////////////////////////
+
+call deoplete#enable()
 
 " CUSTOM CONFIG ///////////////////////////////////////////
 
