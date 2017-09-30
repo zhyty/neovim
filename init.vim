@@ -1,57 +1,32 @@
-" VUNDLE //////////////////////////////////////////////////
+" VIM PLUG //////////////////////////////////////////////////
 
-" PLUGINS
-filetype off                  " required
+call plug#begin('~/.config/nvim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 " Airline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Syntastic
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 " Rainbow Parentheses
-Plugin 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 " Surround
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Tabular
-Plugin 'godlygeek/tabular'
-" Vim-Rails
-" Plugin 'tpope/vim-rails'
-" Ruby Highlighting
-Bundle 'vim-ruby/vim-ruby'
+Plug 'godlygeek/tabular'
 " CTRL P
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 " Bufkill (for BD)
-Plugin 'qpkorr/vim-bufkill'
+Plug 'qpkorr/vim-bufkill'
 " NERDTree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " Latex
-Plugin 'lervag/vimtex'
+Plug 'lervag/vimtex'
 " Python folding
-Plugin 'tmhedberg/SimpylFold'
+Plug 'tmhedberg/SimpylFold'
 " Tender Theme
-Plugin 'jacoborus/tender.vim'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+Plug 'jacoborus/tender.vim'
+
+call plug#end()
 
 " BASIC CONFIG ////////////////////////////////////////////
 
