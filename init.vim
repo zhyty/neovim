@@ -25,6 +25,8 @@ Plug 'lervag/vimtex'
 Plug 'tmhedberg/SimpylFold'
 " Tender Theme
 Plug 'jacoborus/tender.vim'
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
