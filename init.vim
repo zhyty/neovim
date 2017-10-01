@@ -1,3 +1,8 @@
+" required for work in virtualenvs
+" keep at top
+let g:python_host_prog='/usr/bin/python'
+let g:python3_host_prog='/usr/bin/python3'
+
 " VIM PLUG //////////////////////////////////////////////////
 
 call plug#begin('~/.config/nvim/plugged')
@@ -5,8 +10,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Syntastic
-Plug 'scrooloose/syntastic'
 " Rainbow Parentheses
 Plug 'kien/rainbow_parentheses.vim'
 " Surround
@@ -27,19 +30,12 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'jacoborus/tender.vim'
 " deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" neomake linting
+Plug 'neomake/neomake'
 
 call plug#end()
 
 " BASIC CONFIG ////////////////////////////////////////////
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -50,19 +46,9 @@ else
   set backup		" keep a backup file
 endif
 set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set sc          " display incomplete commands
+set ruler		    " show the cursor position all the time
+set sc              " display incomplete commands
 set incsearch		" do incremental searching
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -130,27 +116,6 @@ set noshowmode
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1 " show buffer number
 set timeoutlen=1000 ttimeoutlen=10
-
-" SYNTASTIC ///////////////////////////////////////////////
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler_options = ' -std=c++14 -Wall'
-let g:syntastic_scss_checkers=['']
-
-let g:syntastic_python_checkers = ['pylint']
-" let g:syntastic_python_pylint_args = "--load-plugins pylint_django"
-
-let g:syntastic_ocaml_checkers = ["merlin"]
-
-let g:syntastic_mode_map = {'mode': 'passive'}
-nnoremap <F3> :SyntasticCheck<CR>
-nnoremap <F4> :SyntasticReset<CR>
 
 " RAINBOW PARENTHESES /////////////////////////////////////
 
@@ -236,11 +201,19 @@ set hidden " doesn't require saving before opening new buffer
 
 " MAPPINGS ////////////////////////////////////////
 
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
 noremap <S-k> <Nop>
 noremap <Leader>p :set paste!<CR>
 noremap <Leader>r :call RemoveWhitespace()<CR>
+noremap <F3> :Neomake<CR>
 
 command! W write
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
