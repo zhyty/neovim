@@ -200,12 +200,6 @@ set softtabstop=4
 set expandtab
 set shiftwidth=4
 
-" Showing line numbers
-set number
-
-" Setting runpath for plugins
-set runtimepath+=$home/.vim
-
 " Additional Search Settings
 set ignorecase " case insensitive search
 set smartcase " uppercase letters proc case-sensitive search
@@ -220,10 +214,6 @@ set splitright
 " Set Relative Number
 set relativenumber
 
-" Make j and k move by screen line
-nnoremap j gj
-nnoremap k gk
-
 " Set up backup directories
 set backupdir=~/vimtmp,~/tmp
 set directory=~/vimtmp,~/tmp
@@ -231,21 +221,26 @@ set directory=~/vimtmp,~/tmp
 " Colors
 " colorscheme peachpuff
 " colorscheme Tomorrow-Night
-colorscheme railscasts
+" colorscheme railscasts
 " colorscheme mayansmoke
-" colorscheme tender
-
-" Additional Commands
-command! W write
+colorscheme tender
 
 function RemoveWhitespace()
     %s/\s\+$//e
     noh
 endfunction
-command RemWhite call RemoveWhitespace()
 
 " misc
 set ttyfast
 set hidden " doesn't require saving before opening new buffer
+
+" MAPPINGS ////////////////////////////////////////
+
+nnoremap j gj
+nnoremap k gk
 nnoremap ; :
-map <S-k> <Nop>
+noremap <S-k> <Nop>
+noremap <Leader>p :set paste!<CR>
+noremap <Leader>r :call RemoveWhitespace()<CR>
+
+command! W write
