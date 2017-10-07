@@ -189,12 +189,14 @@ set directory=~/vimtmp,~/tmp
 " colorscheme railscasts
 " colorscheme mayansmoke
 colorscheme tender
+hi Normal ctermbg=236
+hi LineNr ctermfg=241
 
-function RemoveWhitespace()
-    %s/\s\+$//e
+function! RemoveWhitespace()
+    try | %s/\s\+$//e | catch | | endtry
     noh
 endfunction
 
 " misc
-set ttyfast
+set ttyfast 
 set hidden " doesn't require saving before opening new buffer
