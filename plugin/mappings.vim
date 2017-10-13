@@ -11,6 +11,7 @@ noremap <Leader>p :set paste!<CR>
 noremap <Leader>r :call RemoveWhitespace()<CR>
 noremap <F3> :Neomake<CR>
 noremap <Leader>n :noh<CR>
+noremap <Leader>l :ls<CR>
 
 command! W write
 command! Reload source $MYVIMRC
