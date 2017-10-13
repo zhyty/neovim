@@ -32,6 +32,8 @@ Plug 'jacoborus/tender.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " neomake linting
 Plug 'neomake/neomake'
+" pep8 indents
+Plug 'Vimjas/vim-python-pep8-indent'
 
 call plug#end()
 
@@ -200,3 +202,6 @@ endfunction
 " misc
 set ttyfast 
 set hidden " doesn't require saving before opening new buffer
+
+" disable automatic comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
