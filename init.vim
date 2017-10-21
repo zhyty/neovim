@@ -32,6 +32,8 @@ Plug 'jacoborus/tender.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " neomake linting
 Plug 'neomake/neomake'
+" neomake jedi for realsies
+Plug 'zchee/deoplete-jedi'
 " pep8 indents
 Plug 'Vimjas/vim-python-pep8-indent'
 
@@ -157,7 +159,10 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " DEOPLETE ////////////////////////////////////////////////
 
-call deoplete#enable()
+let g:deoplete#enable_at_startup = 1
+
+" autoclose preview window
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " CUSTOM CONFIG ///////////////////////////////////////////
 
@@ -191,7 +196,7 @@ set directory=~/vimtmp,~/tmp
 " colorscheme railscasts
 " colorscheme mayansmoke
 colorscheme tender
-hi Normal ctermbg=236
+hi Normal ctermbg=237
 hi LineNr ctermfg=241
 
 function! RemoveWhitespace()
