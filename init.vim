@@ -36,6 +36,8 @@ Plug 'neomake/neomake'
 Plug 'zchee/deoplete-jedi'
 " pep8 indents
 Plug 'Vimjas/vim-python-pep8-indent'
+" fix trailing whitespace
+Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
 
@@ -199,15 +201,13 @@ colorscheme tender
 hi Normal ctermbg=237
 hi LineNr ctermfg=241
 
-function! RemoveWhitespace()
-    try | %s/\s\+$//e | catch | | endtry
-    noh
-endfunction
-
 " misc
-set ttyfast 
+set ttyfast
 set hidden " doesn't require saving before opening new buffer
 set nowrap
 
 " disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" remove trailing whitespaces on save for python
+autocmd BufWritePre *.py :FixWhitespace
