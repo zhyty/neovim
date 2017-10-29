@@ -1,7 +1,11 @@
 " CONTAINS MY MAPPINGS
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
+" ==================== command
+
+command! W write
+command! Reload source $MYVIMRC
+
+" ==================== non-insert
 
 nnoremap j gj
 nnoremap k gk
@@ -15,11 +19,14 @@ noremap <Leader>m :marks<CR>
 noremap <F2> :noh<CR>
 noremap <F3> :Neomake<CR>
 
-command! W write
-command! Reload source $MYVIMRC
-
-abbr 20= ====================
+" ==================== insert
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
+
+" ==================== abbrev
+
+abbr 20= ====================
