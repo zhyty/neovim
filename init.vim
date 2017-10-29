@@ -200,6 +200,7 @@ set directory=~/vimtmp,~/tmp
 colorscheme tender
 hi Normal ctermbg=237
 hi LineNr ctermfg=241
+hi SpecialKey ctermfg=81
 
 " misc
 set ttyfast
