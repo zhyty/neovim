@@ -9,10 +9,11 @@ nnoremap ; :
 noremap <S-k> <Nop>
 noremap <Leader>p :set paste!<CR>
 noremap <Leader>r :call RemoveWhitespace()<CR>
-noremap <F3> :Neomake<CR>
-noremap <Leader>n :noh<CR>
 noremap <Leader>l :ls<CR>
 noremap <Leader>m :marks<CR>
+
+noremap <F2> :noh<CR>
+noremap <F3> :Neomake<CR>
 
 command! W write
 command! Reload source $MYVIMRC
