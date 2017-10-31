@@ -79,5 +79,5 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " ==================== Trailing Whitespace
 
-" remove trailing whitespaces on save for python
-autocmd BufWritePre *.py :FixWhitespace
+" remove trailing whitespaces on save
+autocmd BufWritePre * :FixWhitespace
