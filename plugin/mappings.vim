@@ -17,7 +17,6 @@ noremap <Leader>l :ls<CR>
 noremap <Leader>m :marks<CR>
 
 noremap <F2> :noh<CR>
-noremap <F3> :Neomake<CR>
 
 " ==================== insert
 

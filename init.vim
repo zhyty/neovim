@@ -74,6 +74,18 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 let g:deoplete#enable_at_startup = 1
 
+function! s:custom_unset_neomake()
+    set signcolumn=no
+endfunction
+
+function! s:custom_set_neomake()
+    set signcolumn=yes
+    Neomake
+endfunction
+
+noremap <F3> :call <SID>custom_set_neomake()<CR>
+noremap <F4> :call <SID>custom_unset_neomake()<CR>
+
 " autoclose preview window
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
