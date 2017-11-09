@@ -16,6 +16,7 @@ noremap <Leader>r :call RemoveWhitespace()<CR>
 noremap <Leader>l :ls<CR>
 noremap <Leader>m :marks<CR>
 
+noremap ,p :CtrlPBuffer<CR>
 noremap <F2> :noh<CR>
 
 " ==================== insert
