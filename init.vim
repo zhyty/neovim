@@ -38,6 +38,8 @@ Plug 'zchee/deoplete-jedi'
 Plug 'Vimjas/vim-python-pep8-indent'
 " fix trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
+" git commands
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
