@@ -95,3 +95,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " remove trailing whitespaces on save
 autocmd BufWritePre * :FixWhitespace
+
+" ==================== Neomake
+
+let g:neomake_open_list = 1
