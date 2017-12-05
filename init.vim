@@ -40,6 +40,8 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'bronson/vim-trailing-whitespace'
 " git commands
 Plug 'tpope/vim-fugitive'
+" elm stuff
+Plug 'elmcast/elm-vim'
 
 call plug#end()
 
@@ -78,6 +80,7 @@ let g:deoplete#enable_at_startup = 1
 
 function! s:custom_unset_neomake()
     set signcolumn=no
+    lclose
 endfunction
 
 function! s:custom_set_neomake()
