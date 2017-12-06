@@ -97,5 +97,5 @@ let g:elm_format_autosave = 0
 " ==================== Plugin Shortcuts
 
 noremap ,p :CtrlPBuffer<CR>
-noremap <F2> :ALEDetail<CR>
+nmap <F2> <Plug>(ale_detail)
 noremap <F5> :NERDTreeToggle<CR>
