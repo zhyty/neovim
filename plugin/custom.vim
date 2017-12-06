@@ -71,6 +71,13 @@ endif
 
 " ==================== CUSTOM
 
+" set leader to space
+let mapleader = " "
+
+" timeouts
+set timeoutlen=1000 ttimeoutlen=10
+set noshowmode
+
 " Fixing the goddamn tabs broh
 set tabstop=4
 set softtabstop=4
@@ -88,8 +95,9 @@ set scrolloff=3 " minimum number of lines above/below the screen
 set splitbelow
 set splitright
 
-" Set Relative Number
-set relativenumber
+" Set number
+" set relativenumber
+set number
 
 " Set up backup directories
 set backupdir=~/vimtmp,~/tmp

@@ -12,6 +12,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Rainbow Parentheses
 Plug 'junegunn/rainbow_parentheses.vim'
+" ale linter
+Plug 'w0rp/ale'
 " Surround
 Plug 'tpope/vim-surround'
 " Tabular
@@ -30,8 +32,6 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'jacoborus/tender.vim'
 " deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" neomake linting
-Plug 'neomake/neomake'
 " neomake jedi for realsies
 Plug 'zchee/deoplete-jedi'
 " pep8 indents
@@ -45,6 +45,16 @@ Plug 'elmcast/elm-vim'
 
 call plug#end()
 
+" ==================== ALE
+
+let g:ale_linters = {
+\   'python': ['pylint']
+\}
+
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+
 " ==================== Rainbow Parens
 
 autocmd FileType * RainbowParentheses
@@ -57,14 +67,11 @@ set laststatus=2
 " AirLine Configuration
 let g:airline_powerline_fonts = 1
 let g:bufferline_echo = 0
-set noshowmode
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1 " show buffer number
-set timeoutlen=1000 ttimeoutlen=10
 
-" ==================== NERDTREE
-
-nnoremap <F5> :NERDTreeToggle<CR>
+" depends on both ale and airline
+let g:airline#extensions#ale#enabled = 1
 
 " ==================== OCAML
 
@@ -78,27 +85,17 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 let g:deoplete#enable_at_startup = 1
 
-function! s:custom_unset_neomake()
-    set signcolumn=no
-    lclose
-endfunction
-
-function! s:custom_set_neomake()
-    set signcolumn=yes
-    Neomake
-endfunction
-
-noremap <F3> :call <SID>custom_set_neomake()<CR>
-noremap <F4> :call <SID>custom_unset_neomake()<CR>
-
-" autoclose preview window
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
 " ==================== Trailing Whitespace
 
 " remove trailing whitespaces on save
 autocmd BufWritePre * :FixWhitespace
 
-" ==================== Neomake
+" ==================== Elm
 
-let g:neomake_open_list = 1
+let g:elm_format_autosave = 0
+
+" ==================== Plugin Shortcuts
+
+noremap ,p :CtrlPBuffer<CR>
+noremap <F2> :ALEDetail<CR>
+noremap <F5> :NERDTreeToggle<CR>

@@ -12,12 +12,9 @@ nnoremap k gk
 nnoremap ; :
 noremap <S-k> <Nop>
 noremap <Leader>p :set paste!<CR>
-noremap <Leader>r :call RemoveWhitespace()<CR>
 noremap <Leader>l :ls<CR>
 noremap <Leader>m :marks<CR>
-
-noremap ,p :CtrlPBuffer<CR>
-noremap <F2> :noh<CR>
+noremap <Leader>n :noh<CR>
 
 " ==================== insert
 
