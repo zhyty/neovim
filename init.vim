@@ -92,7 +92,8 @@ autocmd BufWritePre * :FixWhitespace
 
 " ==================== Elm
 
-let g:elm_format_autosave = 0
+" Disable format on save
+" let g:elm_format_autosave = 0
 
 " ==================== Plugin Shortcuts
 
