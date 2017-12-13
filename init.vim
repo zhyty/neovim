@@ -99,4 +99,5 @@ autocmd BufWritePre * :FixWhitespace
 
 noremap ,p :CtrlPBuffer<CR>
 nmap <F2> <Plug>(ale_detail)
+nmap <F3> <Plug>(ale_toggle)
 noremap <F5> :NERDTreeToggle<CR>
