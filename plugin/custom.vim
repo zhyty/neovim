@@ -96,8 +96,7 @@ set splitbelow
 set splitright
 
 " Set number
-" set relativenumber
-set number
+set relativenumber
 
 " Set up backup directories
 set backupdir=~/vimtmp,~/tmp
