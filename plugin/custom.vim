@@ -95,8 +95,9 @@ set scrolloff=3 " minimum number of lines above/below the screen
 set splitbelow
 set splitright
 
-" Set number
+" Set numbering
 set relativenumber
+set number
 
 " Set up backup directories
 set backupdir=~/vimtmp,~/tmp
