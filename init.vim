@@ -51,6 +51,9 @@ let g:ale_linters = {
 \   'python': ['pylint']
 \}
 
+" not exactly a portable option
+let g:ale_java_javac_classpath = '.:/usr/share/java/junit4.jar'
+
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
@@ -94,6 +97,11 @@ autocmd BufWritePre * :FixWhitespace
 
 " Disable format on save
 " let g:elm_format_autosave = 0
+
+" ==================== vimtex
+
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '> /dev/null 2>&1'
 
 " ==================== Plugin Shortcuts
 
