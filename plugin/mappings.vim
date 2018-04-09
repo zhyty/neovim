@@ -16,7 +16,7 @@ command -nargs=0 -bar Update if &modified
                            \|    endif
                            \|endif
 nnoremap <silent> <C-S> :<C-u>Update<CR>
-inoremap <silent> <C-S> <c-o>:Update<CR>
+inoremap <silent> <C-S> <Esc>:Update<CR>
 
 " ==================== non-insert
 
