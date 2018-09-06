@@ -18,8 +18,6 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 " Tabular
 Plug 'godlygeek/tabular'
-" CTRL P
-Plug 'ctrlpvim/ctrlp.vim'
 " Bufkill (for BD)
 Plug 'qpkorr/vim-bufkill'
 " NERDTree
@@ -42,6 +40,9 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-fugitive'
 " elm stuff
 Plug 'elmcast/elm-vim'
+" junegunn
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -105,7 +106,7 @@ let g:vimtex_view_general_options = '> /dev/null 2>&1'
 
 " ==================== Plugin Shortcuts
 
-noremap ,p :CtrlPBuffer<CR>
+noremap <C-P> :FZF<CR>
 nmap <F2> <Plug>(ale_detail)
 nmap <F3> <Plug>(ale_toggle_buffer)
 noremap <F5> :NERDTreeToggle<CR>
