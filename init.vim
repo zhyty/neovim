@@ -22,24 +22,14 @@ Plug 'godlygeek/tabular'
 Plug 'qpkorr/vim-bufkill'
 " NERDTree
 Plug 'scrooloose/nerdtree'
-" Latex
-Plug 'lervag/vimtex'
 " Python folding
 Plug 'tmhedberg/SimpylFold'
 " Tender Theme
 Plug 'jacoborus/tender.vim'
-" deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" neomake jedi for realsies
-Plug 'zchee/deoplete-jedi'
 " pep8 indents
 Plug 'Vimjas/vim-python-pep8-indent'
 " fix trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
-" git commands
-Plug 'tpope/vim-fugitive'
-" elm stuff
-Plug 'elmcast/elm-vim'
 " junegunn
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -69,7 +59,7 @@ autocmd FileType * RainbowParentheses
 set laststatus=2
 
 " AirLine Configuration
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:bufferline_echo = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1 " show buffer number
@@ -77,32 +67,10 @@ let g:airline#extensions#tabline#buffer_nr_show = 1 " show buffer number
 " depends on both ale and airline
 let g:airline#extensions#ale#enabled = 1
 
-" ==================== OCAML
-
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-" ocp-indent
-execute "set rtp+=" . g:opamshare . "/ocp-indent/vim/indent"
-" merlin
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-
-" ==================== DEOPLETE
-
-let g:deoplete#enable_at_startup = 1
-
 " ==================== Trailing Whitespace
 
 " remove trailing whitespaces on save
 autocmd BufWritePre * :FixWhitespace
-
-" ==================== Elm
-
-" Disable format on save
-" let g:elm_format_autosave = 0
-
-" ==================== vimtex
-
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_general_options = '> /dev/null 2>&1'
 
 " ==================== Plugin Shortcuts
 
